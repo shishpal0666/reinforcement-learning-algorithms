@@ -23,7 +23,7 @@ class deepmind(nn.Module):
         x = F.relu(self.conv1(x))
         x = F.relu(self.conv2(x))
         x = F.relu(self.conv3(x))
-        x = x.view(-1, 32 * 7 * 7)
+        x = x.contiguous().view(-1, 32 * 7 * 7)
 
         return x
 
