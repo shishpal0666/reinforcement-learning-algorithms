@@ -37,6 +37,7 @@ class CustomEnv(gym.Env):
             (850, 750, 100, 150),  # Obstacle 18
         ]
 
+
     def reset(self):
         self.agent_pos = np.array([100, 100])  # Reset to start state
         return self.agent_pos
@@ -96,14 +97,3 @@ class CustomEnv(gym.Env):
 
         plt.legend()
         plt.show()
-
-# Create environment
-env = CustomEnv()
-
-# Test the environment
-obs = env.reset()
-done = False
-while not done:
-  action = env.action_space.sample()  # Random action
-  obs, reward, done, info = env.step(action)
-  env.render()
